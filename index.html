@@ -67,13 +67,25 @@ a strong cooperative that supports friendship and collaboration.
 
 <textarea name="reason" placeholder="Why do you want to join Abavubyi Cooperative?" required></textarea>
 
-<input type="number" name="fee" placeholder="Joining Fee (RWF)" required>
+<label for="fee">Joining Fee (RWF)</label>
+<input type="number" name="fee" placeholder="Amount Paid" required>
+
+<label for="paymentMethod">Payment Method</label>
+<select name="paymentMethod" required>
+<option value="">Select Payment Method</option>
+<option value="MTN MoMo">MTN Mobile Money</option>
+<option value="Airtel Money">Airtel Money</option>
+<option value="Cash">Cash</option>
+</select>
+
+<label for="transaction">MoMo Transaction ID</label>
+<input type="text" name="transaction" placeholder="Enter MoMo Transaction ID">
 
 <button type="submit">Submit Application</button>
 
 </form>
 
-<p id="successMessage">Thank you! God bless you! Your application has been submitted.</p>
+<p id="successMessage">Thank you!Your application has been submitted.</p>
 
 </section>
 
