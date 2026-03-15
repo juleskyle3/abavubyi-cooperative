@@ -1,170 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Abavubyi Cooperative</title>
-
 <link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-
+<header>
+<h1>ABAVUBYI COOPERATIVE</h1>
 <nav>
-
-<h2 class="logo">ABAVUBYI</h2>
-
-<ul>
-
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#join">Join Us</a></li>
-
-</ul>
-
+<a href="#about">About</a>
+<a href="#mission">Mission</a>
+<a href="#join">Join Us</a>
 </nav>
+</header>
 
 
-<!-- HERO SECTION -->
-
-<section id="home" class="hero">
-
-<h1>ABAVUBYI.COM COOPERATIVE</h1>
-
-<p>
-A cooperative built from friendship, unity, and the love of great food.
-</p>
-
-<a href="#join" class="btn">Join Our Community</a>
-
+<section class="hero">
+<h2>Welcome to Abavubyi Cooperative</h2>
+<p>A cooperative built on friendship, unity, and great food.</p>
 </section>
 
 
-
-<!-- ABOUT SECTION -->
-
-<section id="about" class="about">
-
-<h2>About Our Cooperative</h2>
-
+<section id="about">
+<h2>About Us</h2>
 <p>
-Abavubyi Cooperative started jokingly among friends but later grew into a
-successful enterprise. What began as simple fun turned into a strong
-community of people working together.
+Abavubyi Cooperative started jokingly between friends but has grown into a successful enterprise.
+Our goal is to create a strong community while enjoying high quality food together.
 </p>
 
 <p>
-Our cooperative focuses on unity, collaboration, and sharing good moments
-while building something meaningful together.
+We are proudly located in Kigali Province, Rwanda and we welcome new members
+who share our values of unity, teamwork and enjoyment of life.
 </p>
-
-<p>
-We are proudly located in Kigali Province, Rwanda.
-</p>
-
 </section>
 
 
-<!-- MISSION -->
-
-<section class="mission">
-
+<section id="mission">
 <h2>Our Mission</h2>
 
 <p>
-Our mission is to provide our stomachs with the best high quality food
-while strengthening our friendship and building a strong cooperative that
-benefits all its members.
+Our mission is simple:
+to provide our stomachs with the best high quality food while building
+a strong cooperative that supports friendship and collaboration.
 </p>
 
 </section>
 
 
-
-<!-- JOIN FORM -->
-
-<section id="join" class="join">
+<section id="join">
 
 <h2>Join Abavubyi Cooperative</h2>
 
 <form id="joinForm" action="https://formspree.io/f/xbdzadwl" method="POST">
-  <label for="name">Name:</label>
-  <input type="text" id="name" name="name" placeholder="Your Name" required>
 
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email" placeholder="Your Email" required>
+<input type="text" name="name" placeholder="Full Name" required>
 
-  <label for="phone">Phone Number:</label>
-  <input type="text" id="phone" name="phone" placeholder="Your Phone Number" required>
+<input type="email" name="email" placeholder="Email Address" required>
 
-  <label for="dob">Date of Birth:</label>
-  <input type="date" id="dob" name="dob" required>
+<input type="text" name="phone" placeholder="Phone Number" required>
 
-  <label for="reason">Reason for joining:</label>
-  <textarea id="reason" name="reason" placeholder="Why do you want to join us?" required></textarea>
+<input type="date" name="dob" required>
 
-  <label for="fee">Joining Fee (RWF):</label>
-  <input type="number" id="fee" name="fee" placeholder="Amount" required>
+<textarea name="reason" placeholder="Why do you want to join Abavubyi Cooperative?" required></textarea>
 
-  <button type="submit">Submit</button>
+<input type="number" name="fee" placeholder="Joining Fee (RWF)" required>
+
+<button type="submit">Submit Application</button>
+
 </form>
 
-<p id="successMessage" style="display:none; color: green; margin-top: 10px;">
-  Thank you! Your application has been submitted.
-</p>
-
-<script>
-  const form = document.getElementById('joinForm');
-  const message = document.getElementById('successMessage');
-
-  form.addEventListener('submit', function(event) {
-    event.preventDefault(); // stop normal form submission
-    const formData = new FormData(form);
-
-    fetch(form.action, {
-      method: form.method,
-      body: formData,
-      headers: {
-        'Accept': 'application/json'
-      }
-    }).then(response => {
-      if (response.ok) {
-        form.style.display = 'none';
-        message.style.display = 'block';
-      } else {
-        alert('Oops! There was a problem submitting your form.');
-      }
-    }).catch(error => {
-      alert('Oops! There was a problem submitting your form.');
-    });
-  });
-</script>
-
-<p id="message"></p>
+<p id="successMessage">Thank you! Your application has been submitted.</p>
 
 </section>
 
 
-<!-- FOOTER -->
-
 <footer>
 
-<p>© 2026 Abavubyi Cooperative</p>
-
-<p>Kigali Province, Rwanda</p>
+<p>Abavubyi Cooperative • Kigali, Rwanda</p>
 
 </footer>
 
-<script src="script.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+
+const form = document.getElementById("joinForm");
+const successMessage = document.getElementById("successMessage");
+
+form.addEventListener("submit", async function(e){
+
+e.preventDefault();
+
+let data = new FormData(form);
+
+let response = await fetch(form.action,{
+method:"POST",
+body:data,
+headers:{
+'Accept':'application/json'
+}
+});
+
+if(response.ok){
+
+form.reset();
+successMessage.style.display="block";
+
+}else{
+
+alert("There was a problem submitting your application.");
+
+}
+
+});
+
+</script>
 
 </body>
 </html>

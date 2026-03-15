@@ -1,179 +1,79 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
-}
-
 body{
-font-family: 'Poppins', sans-serif;
+font-family: Arial, sans-serif;
+margin:0;
+background:#f4f4f4;
+color:#333;
 }
 
-
-/* NAVBAR */
-
-nav{
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 50px;
-background:#1f7a3f;
+header{
+background:#0b6623;
 color:white;
-
-}
-
-nav ul{
-
-list-style:none;
-display:flex;
-gap:20px;
-
+padding:20px;
+text-align:center;
 }
 
 nav a{
-
 color:white;
+margin:0 15px;
 text-decoration:none;
 font-weight:bold;
-
 }
-
-.logo{
-font-size:24px;
-}
-
-
-/* HERO */
 
 .hero{
-height:90vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-background:linear-gradient(135deg,#1f7a3f,#39b86a);
+background:#228B22;
 color:white;
-padding:20px;
-}
-
-.hero h1{
-font-size:48px;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:18px;
-margin-bottom:30px;
-}
-
-.btn{
-background:white;
-color:#1f7a3f;
-padding:14px 30px;
-border-radius:30px;
-text-decoration:none;
-font-weight:600;
-transition:0.3s;
-}
-
-.btn:hover{
-background:#e7e7e7;
-}
-
-
-/* ABOUT */
-
-.about{
-
 padding:60px;
 text-align:center;
-background:white;
-
 }
 
-.about h2{
-margin-bottom:20px;
-}
-
-.about p{
-
-max-width:700px;
+section{
+padding:40px;
+max-width:800px;
 margin:auto;
-margin-bottom:15px;
-
 }
 
-
-/* MISSION */
-
-.mission{
-
-padding:60px;
-background:#eaf7ee;
-text-align:center;
-
-}
-
-.mission h2{
-
-margin-bottom:20px;
-
-}
-
-
-/* JOIN FORM */
-
-.join{
-
-padding:60px;
-text-align:center;
-
+h2{
+color:#0b6623;
 }
 
 form{
-max-width:550px;
-margin:auto;
-background:white;
-padding:30px;
-border-radius:10px;
-box-shadow:0 10px 20px rgba(0,0,0,0.1);
+display:flex;
+flex-direction:column;
+gap:15px;
+margin-top:20px;
 }
 
-input, textarea, select{
-
+input, textarea{
 padding:12px;
 border:1px solid #ccc;
 border-radius:5px;
-
 }
 
 button{
-
-background:#1f7a3f;
+background:#0b6623;
 color:white;
-padding:12px;
 border:none;
-cursor:pointer;
+padding:12px;
 font-size:16px;
-
+cursor:pointer;
+border-radius:5px;
 }
 
 button:hover{
-
-background:#16612f;
-
+background:#064d1a;
 }
 
-
-/* FOOTER */
+#successMessage{
+display:none;
+color:green;
+margin-top:15px;
+font-weight:bold;
+}
 
 footer{
-
 background:#222;
 color:white;
 text-align:center;
-padding:25px;
-
+padding:20px;
+margin-top:40px;
 }
