@@ -20,22 +20,3 @@ document.getElementById("message").innerText =
 });
 
 });
-const counter = document.getElementById("memberCount");
-
-let count = 0;
-let target = 120;
-
-function updateCounter(){
-
-if(count < target){
-
-count++;
-counter.innerText = count;
-
-setTimeout(updateCounter,20);
-
-}
-
-}
-
-updateCounter();
