@@ -1,22 +1,29 @@
-(function(){
-emailjs.init("YOUR_PUBLIC_KEY");
-})();
+const form = document.getElementById("joinForm");
 
-document.getElementById("joinForm").addEventListener("submit", function(e){
+form.addEventListener("submit", async function(e){
 
 e.preventDefault();
 
-emailjs.sendForm("YOUR_SERVICE_ID","YOUR_TEMPLATE_ID",this)
-.then(function(){
+let data = {
+name: form.name.value,
+email: form.email.value,
+phone: form.phone.value,
+dob: form.dob.value,
+reason: form.reason.value,
+fee: form.fee.value,
+paymentMethod: form.paymentMethod.value,
+transaction: form.transaction.value
+};
 
-document.getElementById("message").innerText =
-"Application sent successfully!";
+await fetch("https://script.google.com/macros/s/AKfycbzIIjxu5fUHIPRCzfSPAbuxJWRlb2RmGKxSDAYq3B92HqYiRlo4OsL3O1MXyDA7kcavoA/exec",{
 
-}, function(error){
-
-document.getElementById("message").innerText =
-"Something went wrong.";
+method:"POST",
+body:JSON.stringify(data)
 
 });
+
+alert("Application submitted successfully!");
+
+form.reset();
 
 });
